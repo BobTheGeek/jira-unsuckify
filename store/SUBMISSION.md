@@ -41,7 +41,7 @@ Do not skip the email verification. You cannot publish without it.
 2. Upload this file:
 
    ```
-   /Users/bobgibilaro/development/jira-unsuckify/dist/jira-unsuckify-1.0.0.zip
+   dist/jira-unsuckify-1.0.0.zip
    ```
 
 3. Wait for it to process. You land on the item's **Store listing** tab.
@@ -99,32 +99,36 @@ Click **Save draft**.
 
 ### Hosting the privacy policy
 
-The policy is already written. Pick one of these.
+It is hosted from this repo, on GitHub Pages. The site lives in `docs/`:
 
-**Option A — GitHub Gist. Two minutes, no account setup beyond GitHub.**
+```
+docs/index.html     a landing page for the extension
+docs/privacy.html   the privacy policy
+docs/.nojekyll      stops GitHub trying to run Jekyll over it
+```
 
-1. Go to https://gist.github.com
-2. Filename: `jira-unsuckify-privacy.md`
-3. Paste the whole contents of `PRIVACY.md`
-4. Click **Create public gist**
-5. Copy the page URL from the address bar
+To turn it on, once the repo is on GitHub:
 
-It will look like `https://gist.github.com/<you>/<hash>`. That is a valid
-privacy policy URL and Google accepts it.
+1. Open the repo on github.com
+2. **Settings** → **Pages**
+3. **Source**: Deploy from a branch
+4. **Branch**: `main`, folder: `/docs`
+5. **Save**
 
-**Option B — a real web page. Nicer, ten minutes.**
+Give it a minute, then your URLs are:
 
-`store/privacy-policy.html` is a finished, self-contained page. No build, no
-assets, no external requests. Put it anywhere that serves a static file:
+```
+https://<your-github-username>.github.io/<repo-name>/
+https://<your-github-username>.github.io/<repo-name>/privacy.html
+```
 
-- Drag the file onto https://app.netlify.com/drop — instant URL, no account
-  needed to start
-- Or `npx vercel deploy --prod` from a folder containing just that file, renamed
-  to `index.html`
-- Or drop it on a Moxie Labs domain, e.g. `moxielabs.co/jira-unsuckify/privacy`
+The second one is the privacy policy URL the store wants.
 
-Whichever you pick, open the URL in a private window first and check it loads
-for someone who is not signed in. A reviewer will do exactly that.
+**Before you paste it into the store, open it in a private window.** If it asks
+for a login, the reviewer will see the same thing and reject the submission.
+
+GitHub Pages needs either a **public repo**, or a **private repo on GitHub
+Pro/Team/Enterprise**. A private repo on the free plan cannot serve Pages.
 
 ### Two places want the URL
 

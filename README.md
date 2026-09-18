@@ -34,6 +34,10 @@ by link, auto-updating — everything is ready in
 [`store/SUBMISSION.md`](store/SUBMISSION.md) and
 [`store/listing.md`](store/listing.md).
 
+The `docs/` folder is a GitHub Pages site. Turn it on under
+**Settings → Pages → Deploy from a branch → `main` / `/docs`** to publish the
+landing page and the privacy policy the Web Store asks for.
+
 ### Install unpacked
 
 1. Clone or download this folder.
@@ -119,8 +123,10 @@ to zero and the board disappears into a 32px strip. The fix uses
 ## Privacy
 
 No network requests. No analytics. No remote code. No data collected. The only
-thing stored is your own on/off settings, in Chrome's extension storage. Full
-text in [`PRIVACY.md`](PRIVACY.md).
+thing stored is your own on/off settings, in Chrome's extension storage.
+
+Full text: [`PRIVACY.md`](PRIVACY.md), or the published page at
+[`docs/privacy.html`](docs/privacy.html).
 
 ## Known limitations
 
@@ -152,10 +158,12 @@ PRIVACY.md            privacy policy (text)
 store/
   listing.md          store copy, permission justifications, privacy answers
   SUBMISSION.md       step-by-step publishing guide
-  privacy-policy.html privacy policy as a ready-to-host web page
   screenshots/        1280x800 listing screenshots
   *.png               promo tiles
-docs/dom-notes.md     what was measured on the live board
+docs/                 GitHub Pages site, served from /docs
+  index.html          landing page
+  privacy.html        published privacy policy
+  dom-notes.md        what was measured on the live board
 test/manual-checklist.md
 ```
 
