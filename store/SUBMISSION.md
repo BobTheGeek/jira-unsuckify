@@ -107,25 +107,42 @@ docs/privacy.html   the privacy policy
 docs/.nojekyll      stops GitHub trying to run Jekyll over it
 ```
 
-To turn it on, once the repo is on GitHub:
+Pages is already switched on for this repo, serving `main` / `/docs`. To check
+or change it: repo → **Settings** → **Pages**.
 
-1. Open the repo on github.com
-2. **Settings** → **Pages**
-3. **Source**: Deploy from a branch
-4. **Branch**: `main`, folder: `/docs`
-5. **Save**
-
-Give it a minute, then your URLs are:
+The canonical URLs are:
 
 ```
-https://<your-github-username>.github.io/<repo-name>/
-https://<your-github-username>.github.io/<repo-name>/privacy.html
+https://bobthegeek.github.io/jira-unsuckify/
+https://bobthegeek.github.io/jira-unsuckify/privacy.html
 ```
 
 The second one is the privacy policy URL the store wants.
 
-**Before you paste it into the store, open it in a private window.** If it asks
-for a login, the reviewer will see the same thing and reject the submission.
+**Before you paste it into the store, open it in a private window** and confirm
+you get the policy, over HTTPS, with no login. The reviewer will do exactly
+that.
+
+> **Heads up.** The account `bobthegeek.github.io` has a custom domain set
+> (`bobthegeek.com`), so GitHub 301s every `github.io` URL to it. That domain's
+> DNS currently points at a mix of GitHub's **deprecated** Pages IPs and a
+> registrar parking service, so some requests land on a parking page and HTTPS
+> does not answer at all. Until that is fixed, neither URL is dependable enough
+> to submit.
+>
+> The fix is four DNS `A` records on `bobthegeek.com`, replacing what is there
+> now, plus removing any registrar domain-forwarding on the apex:
+>
+> ```
+> 185.199.108.153
+> 185.199.109.153
+> 185.199.110.153
+> 185.199.111.153
+> ```
+>
+> Then, in the `bobthegeek.github.io` repo → **Settings** → **Pages**, re-save
+> the custom domain so GitHub issues a certificate, and tick **Enforce HTTPS**.
+> That fixes the personal site too.
 
 GitHub Pages needs either a **public repo**, or a **private repo on GitHub
 Pro/Team/Enterprise**. A private repo on the free plan cannot serve Pages.
