@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jira Unsuckify — Options</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      body {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+      section {
+        margin-top: 28px;
+      }
+      section > h2 {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-subtle);
+        margin-bottom: 4px;
+      }
+      .jbu-domain-list {
+        list-style: none;
+        margin: 8px 0 0;
+        padding: 0;
+      }
+      .jbu-domain-list li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .jbu-domain-list code {
+        font-size: 13px;
+      }
+      .jbu-add-domain {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .jbu-note {
+        font-size: 12px;
+        color: var(--text-subtle);
+        margin: 6px 0 0;
+      }
+      .jbu-note[data-tone="bad"] {
+        color: var(--danger);
+      }
+      .jbu-note[data-tone="good"] {
+        color: var(--jbu-green);
+      }
+      .jbu-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="jbu-header">
+      <img src="../../icons/icon48.png" alt="" />
+      <h1>Jira Unsuckify</h1>
+      <span class="jbu-version" id="version"></span>
+    </header>
+
+    <div class="jbu-body">
+      <section>
+        <h2>Behaviour</h2>
+
+        <div class="jbu-row">
+          <span>
+            <span class="jbu-row-label">Unscroll boards</span>
+            <br />
+            <span class="jbu-row-hint">The main switch.</span>
+          </span>
+          <label class="jbu-switch">
+            <input type="checkbox" id="enabled" /><span></span>
+          </label>
+        </div>
+
+        <div class="jbu-row">
+          <span>
+            <span class="jbu-row-label">Sticky column headers</span>
+            <br />
+            <span class="jbu-row-hint">Headers stay on screen while you scroll.</span>
+          </span>
+          <label class="jbu-switch">
+            <input type="checkbox" id="stickyHeaders" /><span></span>
+          </label>
+        </div>
+
+        <div class="jbu-row">
+          <span>
+            <span class="jbu-row-label">Skip drawing off-screen cards</span>
+            <br />
+            <span class="jbu-row-hint">
+              Helps on very large boards. Costs an accurate scrollbar size, and
+              the browser's find-on-page can miss cards.
+            </span>
+          </span>
+          <label class="jbu-switch">
+            <input type="checkbox" id="contentVisibility" /><span></span>
+          </label>
+        </div>
+
+        <div class="jbu-row">
+          <span>
+            <span class="jbu-row-label">Debug mode</span>
+            <br />
+            <span class="jbu-row-hint">
+              Outlines every matched element and logs to the console.
+            </span>
+          </span>
+          <label class="jbu-switch">
+            <input type="checkbox" id="debug" /><span></span>
+          </label>
+        </div>
+      </section>
+
+      <section>
+        <h2>Custom Jira domains</h2>
+        <p class="jbu-note">
+          Only needed if your Jira is not on <code>atlassian.net</code>. Chrome
+          will ask you to approve each one.
+        </p>
+        <ul class="jbu-domain-list" id="domain-list"></ul>
+        <div class="jbu-add-domain">
+          <input type="text" id="domain-input" placeholder="jira.example.com" />
+          <button class="jbu-primary" id="domain-add">Add</button>
+        </div>
+        <p class="jbu-note" id="domain-note"></p>
+      </section>
+
+      <section>
+        <h2>Selector overrides</h2>
+        <p class="jbu-note">
+          For when Jira changes its DOM and the extension stops working. Paste
+          JSON that maps a selector name to a new CSS selector. Anything you
+          leave out keeps its shipped value. An empty box means "use the
+          defaults".
+        </p>
+        <textarea id="overrides" spellcheck="false"></textarea>
+        <div class="jbu-actions">
+          <button class="jbu-primary" id="overrides-save">Save overrides</button>
+          <button id="overrides-defaults">Load shipped defaults</button>
+          <button class="jbu-danger" id="overrides-clear">Clear</button>
+        </div>
+        <p class="jbu-note" id="overrides-note"></p>
+      </section>
+    </div>
+
+    <script src="../selectors.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

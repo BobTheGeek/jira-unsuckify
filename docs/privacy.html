@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Jira Unsuckify</title>
+    <meta
+      name="description"
+      content="Jira Unsuckify collects no data, makes no network requests, and contains no remote code."
+    />
+    <style>
+      :root {
+        --navy: #12305e;
+        --blue: #2e86a8;
+        --green: #58b98a;
+        --bg: #ffffff;
+        --sunken: #f4f7fa;
+        --text: #172b4d;
+        --subtle: #5e6c84;
+        --border: #dfe4ec;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1f1f21;
+          --sunken: #161618;
+          --text: #dcdfe4;
+          --subtle: #9fa6b2;
+          --border: #3a3d43;
+          --blue: #6fb6d0;
+          --green: #7fd1a6;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+      .band {
+        height: 6px;
+        background: linear-gradient(90deg, var(--navy), #2e86a8 55%, #58b98a);
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 24px 96px;
+      }
+      .wordmark {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      h1 {
+        font-size: 30px;
+        line-height: 1.25;
+        margin: 8px 0 4px;
+      }
+      .updated {
+        color: var(--subtle);
+        font-size: 14px;
+        margin: 0 0 32px;
+      }
+      h2 {
+        font-size: 19px;
+        margin: 40px 0 8px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+      }
+      .lede {
+        background: var(--sunken);
+        border-left: 3px solid var(--green);
+        border-radius: 0 6px 6px 0;
+        padding: 16px 18px;
+        margin: 0 0 8px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 16px 0;
+        font-size: 15px;
+        display: block;
+        overflow-x: auto;
+      }
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      th {
+        color: var(--subtle);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.9em;
+        background: var(--sunken);
+        padding: 1px 5px;
+        border-radius: 3px;
+      }
+      a {
+        color: var(--blue);
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin: 4px 0;
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        color: var(--subtle);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="band"></div>
+    <main>
+      <p class="wordmark">Jira Unsuckify</p>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: 18 September 2026</p>
+
+      <p class="lede">
+        <strong>Jira Unsuckify collects nothing, sends nothing anywhere, and
+        makes no network requests of any kind.</strong> It is a stylesheet. It
+        changes how Jira board columns are laid out in your browser. That is all
+        it does.
+      </p>
+
+      <h2>What the extension collects</h2>
+      <p>Nothing.</p>
+      <p>
+        There is no analytics, no telemetry, no crash reporting, no tracking, no
+        advertising identifier, and no account of any kind. The developer has no
+        server and receives no data from this extension.
+      </p>
+
+      <h2>What the extension stores</h2>
+      <p>Only your own settings:</p>
+      <ul>
+        <li>Whether the extension is switched on</li>
+        <li>Whether sticky column headers are switched on</li>
+        <li>Whether "skip drawing off-screen cards" is switched on</li>
+        <li>Whether debug mode is switched on</li>
+        <li>Any custom Jira domains you have added</li>
+        <li>Any CSS selector overrides you have typed in</li>
+      </ul>
+      <p>
+        These are stored using Chrome's own extension settings storage
+        (<code>chrome.storage.sync</code>). If you have Chrome Sync turned on,
+        Chrome copies those settings between your own signed-in Chrome browsers,
+        the same way it syncs your bookmarks. That transfer is between you and
+        Google, under
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+        The developer of this extension has no access to it and receives no copy
+        of it.
+      </p>
+      <p>Uninstalling the extension removes these settings.</p>
+
+      <h2>What the extension reads</h2>
+      <p>
+        On a Jira board page, the extension reads the structure of the page. It
+        checks which elements are present so it knows it is really looking at a
+        board, and it measures the board's background colour so that sticky
+        column headers are not see-through.
+      </p>
+      <p>
+        It does not read, copy, store or transmit the contents of your work
+        items, comments, project names, or anything else on the page. Everything
+        it reads stays in your browser for the fraction of a second it takes to
+        decide whether to apply a stylesheet.
+      </p>
+      <p>On any page that is not a Jira board, the extension does nothing at all.</p>
+
+      <h2>Permissions, and why each one exists</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>storage</code></td>
+            <td>To remember your settings, listed above.</td>
+          </tr>
+          <tr>
+            <td><code>scripting</code></td>
+            <td>
+              To switch the extension on for self-hosted Jira domains that you
+              add yourself in options. Nothing is registered for a domain you
+              have not added and approved.
+            </td>
+          </tr>
+          <tr>
+            <td><code>https://*.atlassian.net/*</code></td>
+            <td>
+              Jira Cloud is served from this domain. The extension needs to see
+              the board page in order to restyle it.
+            </td>
+          </tr>
+          <tr>
+            <td><code>https://*/*</code> (optional)</td>
+            <td>
+              Never requested at install. Requested one domain at a time, only
+              when you type your own self-hosted Jira address into the options
+              page and click Add. Chrome asks you to approve each one.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Remote code</h2>
+      <p>
+        There is none. Every line of code ships inside the extension package.
+        Nothing is downloaded, fetched or evaluated from a server at runtime.
+      </p>
+
+      <h2>Third parties</h2>
+      <p>
+        None. No data is shared, sold or transferred to anyone, because none is
+        collected.
+      </p>
+
+      <h2>Children</h2>
+      <p>The extension collects no data from anyone, including children.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If this policy changes, the date at the top will change with it. Any
+        version that starts collecting data would be a different product, and
+        would say so loudly.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy:
+        <a href="mailto:bgibilaro@moxielabs.co">bgibilaro@moxielabs.co</a>
+      </p>
+
+      <footer>Jira Unsuckify · Moxie Labs</footer>
+    </main>
+  </body>
+</html>

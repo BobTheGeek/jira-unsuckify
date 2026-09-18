@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jira Unsuckify</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <style>
+      body {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="jbu-header">
+      <img src="../../icons/icon48.png" alt="" />
+      <h1>Jira Unsuckify</h1>
+      <span class="jbu-version" id="version"></span>
+    </header>
+
+    <div class="jbu-body">
+      <div class="jbu-status" id="status" data-tone="off">
+        <span class="jbu-status-dot"></span>
+        <span>
+          <span class="jbu-status-title" id="status-title">Checking…</span>
+          <span class="jbu-status-detail" id="status-detail"></span>
+        </span>
+      </div>
+
+      <div class="jbu-row">
+        <span>
+          <span class="jbu-row-label">Unscroll boards</span>
+          <br />
+          <span class="jbu-row-hint">Full-height columns, one scrollbar.</span>
+        </span>
+        <label class="jbu-switch">
+          <input type="checkbox" id="enabled" />
+          <span></span>
+        </label>
+      </div>
+
+      <div class="jbu-row">
+        <span>
+          <span class="jbu-row-label">Sticky column headers</span>
+          <br />
+          <span class="jbu-row-hint">Keep headers visible while you scroll.</span>
+        </span>
+        <label class="jbu-switch">
+          <input type="checkbox" id="stickyHeaders" />
+          <span></span>
+        </label>
+      </div>
+
+      <p class="jbu-footer-link">
+        <a href="#" id="open-options">Options</a>
+      </p>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

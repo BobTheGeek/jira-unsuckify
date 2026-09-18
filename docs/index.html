@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jira Unsuckify — a Chrome extension that unscrolls Jira boards</title>
+    <meta
+      name="description"
+      content="Jira's new board makes every column its own scroll box. This Chrome extension turns that off: full-height columns, one scrollbar."
+    />
+    <link rel="icon" href="assets/icon128.png" />
+    <style>
+      :root {
+        --navy: #12305e;
+        --blue: #2e86a8;
+        --green: #58b98a;
+        --bg: #ffffff;
+        --sunken: #f4f7fa;
+        --text: #172b4d;
+        --subtle: #5e6c84;
+        --border: #dfe4ec;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1f1f21;
+          --sunken: #161618;
+          --text: #dcdfe4;
+          --subtle: #9fa6b2;
+          --border: #3a3d43;
+          --blue: #6fb6d0;
+          --green: #7fd1a6;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+      .band {
+        height: 6px;
+        background: linear-gradient(90deg, var(--navy), #2e86a8 55%, #58b98a);
+      }
+      main {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 40px 24px 96px;
+      }
+      .logo {
+        display: block;
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        margin: 0 0 8px -8px;
+      }
+      .tagline {
+        font-size: 21px;
+        line-height: 1.45;
+        color: var(--subtle);
+        margin: 0 0 28px;
+      }
+      .lede {
+        background: var(--sunken);
+        border-left: 3px solid var(--green);
+        border-radius: 0 6px 6px 0;
+        padding: 16px 18px;
+        margin: 0 0 32px;
+      }
+      h2 {
+        font-size: 19px;
+        margin: 40px 0 10px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      figure {
+        margin: 24px 0;
+      }
+      figure img {
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: block;
+      }
+      figcaption {
+        color: var(--subtle);
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.9em;
+        background: var(--sunken);
+        padding: 1px 5px;
+        border-radius: 3px;
+      }
+      a {
+        color: var(--blue);
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .pills li {
+        margin: 0;
+        padding: 5px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--subtle);
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        color: var(--subtle);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="band"></div>
+    <main>
+      <img class="logo" src="assets/logo.png" alt="Jira Unsuckify" />
+      <p class="tagline">
+        A Chrome extension that gives you back the old Jira board scrolling.
+      </p>
+
+      <p class="lede">
+        Jira's new board turns <strong>every column into its own scroll box</strong>.
+        One tiny scrollbar per column. You cannot see a whole column at once, and
+        dragging a card to a column further down means scrolling two things at
+        the same time. There is no Jira setting to turn this off.
+        <br /><br />
+        This turns it off.
+      </p>
+
+      <ul>
+        <li>Every column grows to its full height</li>
+        <li>The board gets <strong>one</strong> scrollbar instead of one per column</li>
+        <li>Column headers stay on screen while you scroll</li>
+        <li>Horizontal scrolling still works</li>
+        <li>Jira's top bar, sidebar and project tabs stay exactly where they are</li>
+        <li>Works with swimlanes</li>
+      </ul>
+
+      <p>
+        Cards keep loading as you scroll, the same way they always did. Drag and
+        drop still works, including dragging to a column below the fold.
+      </p>
+
+      <ul class="pills">
+        <li>Manifest V3</li>
+        <li>No network requests</li>
+        <li>No analytics</li>
+        <li>No remote code</li>
+        <li>No build step</li>
+      </ul>
+
+      <h2>What it looks like</h2>
+
+      <figure>
+        <img src="assets/before.png" alt="Jira's new board, with a separate scrollbar on every column" />
+        <figcaption>Before: six columns, six scroll boxes.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/after.png" alt="The same board with full-height columns and a single scrollbar" />
+        <figcaption>After: full-height columns, one scroll box for the whole board.</figcaption>
+      </figure>
+
+      <h2>What it does not touch</h2>
+      <p>
+        Backlog, timeline, reports, list and summary pages. Old-style boards.
+        Anything that is not the new board. On those pages the extension does
+        nothing at all.
+      </p>
+
+      <h2>Built to fail safely</h2>
+      <p>
+        Jira is a React app and it changes. Before this extension restyles
+        anything, it checks that every element it needs is actually there. If
+        Jira has moved something, the extension stays completely inactive rather
+        than leaving your board half broken, and the toolbar badge turns into a
+        red <code>!</code> that names exactly what changed. You can paste a
+        corrected selector into the options page and carry on without waiting
+        for an update.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+        Nothing is collected, nothing is sent anywhere, and no network requests
+        are made at all. Read the full
+        <a href="privacy.html">privacy policy</a>.
+      </p>
+
+      <footer>
+        Jira Unsuckify · <a href="privacy.html">Privacy policy</a> ·
+        Not affiliated with Atlassian. Jira is a trademark of Atlassian.
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+/*
+ * Selector-independent styles, injected at document_start.
+ *
+ * The rules that actually unscroll the board are NOT here. They are generated
+ * at runtime by content.js from src/selectors.js, because the options page
+ * lets a user override any selector without shipping a new version, and a
+ * static stylesheet cannot honour that. Keeping the two in one place means
+ * there is exactly one file to patch when Jira changes its DOM.
+ *
+ * Everything below is inert until content.js sets body[data-jbu-active="true"].
+ */
+
+body[data-jbu-active="true"] {
+  /* Filled in by content.js after it measures the board's real background.
+     Used behind sticky column headers so cards do not show through. */
+  --jbu-header-bg: var(--ds-surface, #ffffff);
+}
+
+/* Debug mode outlines. Colours are Atlassian's own, so they read correctly in
+   both the light and dark Jira themes. */
+body[data-jbu-active="true"][data-jbu-debug="true"] {
+  --jbu-debug-board: #ff5630;
+  --jbu-debug-cell: #4c9aff;
+  --jbu-debug-scroller: #36b37e;
+  --jbu-debug-swimlane: #ffab00;
+}
