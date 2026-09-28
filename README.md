@@ -26,8 +26,12 @@ that is not the new board. On those pages the extension does nothing at all.
 
 ## Install
 
-Either install it from the Chrome Web Store link your admin shared with you, or
-load it unpacked, below.
+**[Add to Chrome](https://chromewebstore.google.com/detail/jira-unsuckify/klcalgmhbaieegofnldhlkkhlkcfggle)**
+
+Published as an unlisted Chrome Web Store item: it does not appear in store
+search, anyone with that link can install it, and it updates itself.
+
+Or load it unpacked, below.
 
 To publish it yourself as an **unlisted** store listing — not in search, install
 by link, auto-updating — everything is ready in

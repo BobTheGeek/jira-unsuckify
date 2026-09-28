@@ -107,6 +107,29 @@
       a {
         color: var(--blue);
       }
+      .cta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin: 28px 0 0;
+      }
+      .button {
+        display: inline-block;
+        padding: 11px 22px;
+        border-radius: 6px;
+        background: var(--blue);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .button:hover {
+        filter: brightness(1.08);
+      }
+      .cta-note {
+        font-size: 14px;
+        color: var(--subtle);
+      }
       .pills {
         display: flex;
         flex-wrap: wrap;
@@ -163,6 +186,11 @@
         drop still works, including dragging to a column below the fold.
       </p>
 
+      <p class="cta">
+        <a class="button" href="https://chromewebstore.google.com/detail/jira-unsuckify/klcalgmhbaieegofnldhlkkhlkcfggle">Add to Chrome</a>
+        <span class="cta-note">Unlisted on the Chrome Web Store. Updates itself.</span>
+      </p>
+
       <ul class="pills">
         <li>Manifest V3</li>
         <li>No network requests</li>
@@ -209,7 +237,8 @@
       </p>
 
       <footer>
-        Jira Unsuckify · <a href="privacy.html">Privacy policy</a> ·
+        Jira Unsuckify · <a href="https://chromewebstore.google.com/detail/jira-unsuckify/klcalgmhbaieegofnldhlkkhlkcfggle">Chrome Web Store</a> ·
+        <a href="privacy.html">Privacy policy</a> ·
         Not affiliated with Atlassian. Jira is a trademark of Atlassian.
       </footer>
     </main>

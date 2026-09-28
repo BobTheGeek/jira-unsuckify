@@ -174,15 +174,18 @@ exactly that question.
 
 ## Step 7 — Share it with your team
 
-Once it is approved, open the item in the developer console and copy the
-**public link**. It looks like:
+Published unlisted on 2026-09-28. Extension ID
+`klcalgmhbaieegofnldhlkkhlkcfggle`. The install link is:
 
 ```
-https://chromewebstore.google.com/detail/jira-unsuckify/<some-id>
+https://chromewebstore.google.com/detail/jira-unsuckify/klcalgmhbaieegofnldhlkkhlkcfggle
 ```
 
-Send that link to your team. They click **Add to Chrome**. That is all they do.
-The extension updates itself from then on.
+Send that to your team. They click **Add to Chrome**. That is all they do. The
+extension updates itself from then on.
+
+Verified to load for a signed-out visitor, so the link works for anyone who has
+it without needing access to the developer account.
 
 ---
 
